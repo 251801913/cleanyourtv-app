@@ -33,6 +33,7 @@ SIMPLE = re.compile(r"\{(\w+)\}")
 
 GTX_OK = True  # refined by probe()
 UAPIS_OK = True  # refined by probe(); uapis.cn (free, no key, China-reachable)
+MYMEM_OK = True  # refined by fast probe; MyMemory fallback
 QUOTA_EXHAUSTED = False  # set True once MyMemory daily quota is hit
 
 
@@ -88,7 +89,7 @@ def mymem(q):
     if MYMEMORY_EMAIL:
         params["de"] = MYMEMORY_EMAIL
     url = "https://api.mymemory.translated.net/get?" + urllib.parse.urlencode(params)
-    data = json.loads(_request(url, 12, {"User-Agent": "cytv-fix/1.0"}))
+    data = json.loads(_request(url, 12, {"User-Agent": "cytv-fix/1.0"}, max_retries=3))
     text = (data.get("responseData") or {}).get("translatedText", "")
     # MyMemory returns the quota warning *inside* translatedText on exhaustion.
     if "MYMEMORY WARNING" in text or "QUOTA" in text.upper():
@@ -111,7 +112,7 @@ def uapis(q):
     body = json.dumps({"query": q, "from_lang": "英文", "to_lang": "中文"}).encode("utf-8")
     headers = {"Content-Type": "application/json", "User-Agent": "cleanyourtv-zh/1.0"}
     last = None
-    for i in range(6):
+    for i in range(4):
         try:
             req = urllib.request.Request(url, data=body, headers=headers)
             with urllib.request.urlopen(req, timeout=20) as r:
@@ -141,8 +142,8 @@ def uapis(q):
         except urllib.error.HTTPError as e:
             last = e
             if e.code in (429, 500, 502, 503, 504):
-                wait = min(5 * (2 ** i), 45)
-                print(f"    [uapis 429] retry {i+1}/6 after {wait}s")
+                wait = min(5 * (2 ** i), 25)
+                print(f"    [uapis 429] retry {i+1}/4 after {wait}s")
                 time.sleep(wait)
                 continue
             raise
@@ -155,12 +156,31 @@ def uapis(q):
     raise last
 
 
-def probe_gtx():
-    """Return True only if gtx answers a trivial request quickly."""
+def _alive(url, data=None, headers=None, timeout=8):
+    """One-shot liveness check: True only if the endpoint answers HTTP 200.
+
+    Deliberately does NOT use the backoff-heavy translators, so a rate-limited
+    backend is detected in ~timeout seconds instead of after many retries.
+    """
     try:
-        return bool(gtx("hi"))
+        req = urllib.request.Request(url, data=data, headers=headers or {"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            return r.status == 200
     except Exception:
         return False
+
+
+UAPIS_PROBE_URL = "https://uapis.cn/api/v1/translate/stream"
+UAPIS_PROBE_BODY = json.dumps({"query": "hi", "from_lang": "英文", "to_lang": "中文"}).encode("utf-8")
+MYMEM_PROBE_URL = "https://api.mymemory.translated.net/get?" + urllib.parse.urlencode(
+    {"q": "hi", "langpair": "en|zh-CN"})
+
+
+def probe_gtx():
+    """Fast liveness check for Google gtx (no long backoff)."""
+    url = "https://translate.googleapis.com/translate_a/single?" + urllib.parse.urlencode(
+        {"client": "gtx", "sl": "en", "tl": "zh-CN", "dt": "t", "q": "hi"})
+    return _alive(url, timeout=6)
 
 
 def probe_uapis():
@@ -176,7 +196,7 @@ def tr(t):
         return t
     if QUOTA_EXHAUSTED:
         return t
-    backends = ([uapis] if UAPIS_OK else []) + ([gtx] if GTX_OK else []) + [mymem]
+    backends = ([uapis] if UAPIS_OK else []) + ([gtx] if GTX_OK else []) + ([mymem] if MYMEM_OK else [])
     for fn in backends:
         for attempt in range(2):
             try:
@@ -190,10 +210,20 @@ def tr(t):
 
 
 def main():
-    global GTX_OK, UAPIS_OK
+    global GTX_OK, UAPIS_OK, MYMEM_OK
     GTX_OK = probe_gtx()
-    UAPIS_OK = probe_uapis()
-    print(f"[probe] gtx reachable: {GTX_OK} | uapis.cn reachable: {UAPIS_OK}  (fallback: MyMemory)")
+    # Fast, non-backoff liveness probes so a rate-limited backend is detected
+    # quickly instead of after many slow retries.
+    uapis_alive = _alive(UAPIS_PROBE_URL, data=UAPIS_PROBE_BODY,
+                         headers={"Content-Type": "application/json", "User-Agent": "cleanyourtv-zh/1.0"})
+    mymem_alive = _alive(MYMEM_PROBE_URL, headers={"User-Agent": "cytv-fix/1.0"})
+    UAPIS_OK = uapis_alive
+    MYMEM_OK = mymem_alive
+    print(f"[probe] gtx={GTX_OK} | uapis.cn={uapis_alive} | mymem={mymem_alive}")
+    if not uapis_alive and not mymem_alive:
+        print("[abort] both uapis.cn and MyMemory are rate-limited right now; "
+              "exiting so the cooldown loop can wait out the window.")
+        return
     total = 0
     files = sorted(glob.glob(f"{REPO}/**/values-zh-rCN/*.xml", recursive=True))
     for f in files:
