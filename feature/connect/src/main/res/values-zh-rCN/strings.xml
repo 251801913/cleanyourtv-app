@@ -28,7 +28,7 @@
     <!-- S1b Which TV? -->
     <string name="picker_title">哪个电视？</string>
     <string name="picker_body">不确定？您选择的电视稍后会在屏幕上显示一条消息。</string>
-    <string name="picker_row">{name} ， {room} · {platform}</string>
+    <string name="picker_row">{name}，{room} · {platform}</string>
     <string name="picker_row_noroom">{name} · {platform}</string>
     <string name="picker_name_with_suffix">{name} ...{suffix}</string>
     <string name="picker_platform_android_tv">Android TV {version}</string>
@@ -57,11 +57,11 @@
     <string name="door_not_this_tv">不是这台电视机？请输入电视机地址</string>
     <string name="door_brand_prompt">哪个品牌？</string>
     <string name="door_brand_xiaomi">小米</string>
-    <string name="door_brand_tcl">TCL</string>
+    <string name="door_brand_tcl">Tcl</string>
     <string name="door_brand_sony">索尼</string>
     <string name="door_brand_hisense">海信</string>
     <string name="door_brand_philips">飞利浦</string>
-    <string name="door_brand_google">Google</string>
+    <string name="door_brand_google">谷歌</string>
     <string name="door_brand_amazon">0亚马逊</string>
     <string name="door_brand_other">其他种族</string>
     <!-- After the TCL chip: China-market TCL firmware and TCL's Android TV or Google TV need different steps. -->

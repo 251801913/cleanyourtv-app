@@ -19,7 +19,7 @@ Usage (run from this repo's root directory):
   python3 fix_zh.py
 """
 import os, re, sys, json, time, glob
-import urllib.parse, urllib.request
+import urllib.parse, urllib.request, urllib.error
 from lxml import etree
 
 REPO = sys.argv[1] if len(sys.argv) > 1 else "."
@@ -32,6 +32,8 @@ TAG = re.compile(r"<[^>]+>")
 SIMPLE = re.compile(r"\{(\w+)\}")
 
 GTX_OK = True  # refined by probe()
+UAPIS_OK = True  # refined by probe(); uapis.cn (free, no key, China-reachable)
+QUOTA_EXHAUSTED = False  # set True once MyMemory daily quota is hit
 
 
 def validate(src, dst):
@@ -48,16 +50,36 @@ def validate(src, dst):
     return True
 
 
-def _get(url, timeout, headers=None):
-    req = urllib.request.Request(url, headers=headers or {"User-Agent": "Mozilla/5.0"})
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        return r.read().decode("utf-8")
+def _request(url, timeout=15, headers=None, data=None, max_retries=5):
+    """GET/POST with 429/5xx exponential backoff. Raises after retries."""
+    h = headers or {"User-Agent": "Mozilla/5.0"}
+    last = None
+    for i in range(max_retries):
+        try:
+            req = urllib.request.Request(url, data=data, headers=h)
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                return r.read().decode("utf-8", "ignore")
+        except urllib.error.HTTPError as e:
+            last = e
+            if e.code in (429, 500, 502, 503, 504):
+                wait = min(4 * (2 ** i), 45) + (i % 3)
+                print(f"    [429/5xx] retry {i+1}/{max_retries} after {wait}s")
+                time.sleep(wait)
+                continue
+            raise
+        except Exception as e:
+            last = e
+            if i < max_retries - 1:
+                time.sleep(3)
+                continue
+            raise
+    raise last
 
 
 def gtx(q):
     url = "https://translate.googleapis.com/translate_a/single?" + urllib.parse.urlencode(
         {"client": "gtx", "sl": "en", "tl": "zh-CN", "dt": "t", "q": q})
-    data = json.loads(_get(url, 10, {"User-Agent": "Mozilla/5.0"}))
+    data = json.loads(_request(url, 10, {"User-Agent": "Mozilla/5.0"}))
     return "".join(seg[0] for seg in data[0] if seg[0])
 
 
@@ -66,14 +88,71 @@ def mymem(q):
     if MYMEMORY_EMAIL:
         params["de"] = MYMEMORY_EMAIL
     url = "https://api.mymemory.translated.net/get?" + urllib.parse.urlencode(params)
-    data = json.loads(_get(url, 12, {"User-Agent": "cytv-fix/1.0"}))
+    data = json.loads(_request(url, 12, {"User-Agent": "cytv-fix/1.0"}))
     text = (data.get("responseData") or {}).get("translatedText", "")
     # MyMemory returns the quota warning *inside* translatedText on exhaustion.
     if "MYMEMORY WARNING" in text or "QUOTA" in text.upper():
+        global QUOTA_EXHAUSTED
+        QUOTA_EXHAUSTED = True
         raise RuntimeError("mymemory quota/warning: " + text[:80])
     if data.get("responseStatus") != 200:
         raise RuntimeError(data.get("responseDetails", "mymemory error"))
     return text
+
+
+def uapis(q):
+    """Free streaming translator at uapis.cn (no key, China-reachable).
+
+    POSTs to /api/v1/translate/stream and concatenates the SSE `content`
+    chunks. Returns the first synonym-candidate (uapis emits dictionary-style
+    alternatives separated by ；). Retries on 429/5xx with backoff.
+    """
+    url = "https://uapis.cn/api/v1/translate/stream"
+    body = json.dumps({"query": q, "from_lang": "英文", "to_lang": "中文"}).encode("utf-8")
+    headers = {"Content-Type": "application/json", "User-Agent": "cleanyourtv-zh/1.0"}
+    last = None
+    for i in range(6):
+        try:
+            req = urllib.request.Request(url, data=body, headers=headers)
+            with urllib.request.urlopen(req, timeout=20) as r:
+                parts = []
+                for raw in r:
+                    line = raw.decode("utf-8", "ignore").rstrip("\n").rstrip("\r")
+                    if not line.startswith("data:"):
+                        continue
+                    data = line[5:].strip()
+                    if not data:
+                        continue
+                    try:
+                        obj = json.loads(data)
+                    except Exception:
+                        continue
+                    if "error" in obj:
+                        raise RuntimeError("uapis error: " + str(obj.get("error")))
+                    if obj.get("content"):
+                        parts.append(obj["content"])
+                text = "".join(parts).strip()
+                # uapis returns dictionary-style synonyms split by ；; keep first
+                if "；" in text:
+                    text = text.split("；")[0].strip()
+                if not text:
+                    raise RuntimeError("uapis empty result")
+                return text
+        except urllib.error.HTTPError as e:
+            last = e
+            if e.code in (429, 500, 502, 503, 504):
+                wait = min(5 * (2 ** i), 45)
+                print(f"    [uapis 429] retry {i+1}/6 after {wait}s")
+                time.sleep(wait)
+                continue
+            raise
+        except Exception as e:
+            last = e
+            if i < 5:
+                time.sleep(3)
+                continue
+            raise
+    raise last
 
 
 def probe_gtx():
@@ -84,10 +163,20 @@ def probe_gtx():
         return False
 
 
+def probe_uapis():
+    """Return True only if uapis.cn answers a trivial request quickly."""
+    try:
+        return bool(uapis("hi"))
+    except Exception:
+        return False
+
+
 def tr(t):
     if not t.strip() or not alpha.search(t):
         return t
-    backends = ([gtx] if GTX_OK else []) + [mymem]
+    if QUOTA_EXHAUSTED:
+        return t
+    backends = ([uapis] if UAPIS_OK else []) + ([gtx] if GTX_OK else []) + [mymem]
     for fn in backends:
         for attempt in range(2):
             try:
@@ -101,20 +190,26 @@ def tr(t):
 
 
 def main():
-    global GTX_OK
+    global GTX_OK, UAPIS_OK
     GTX_OK = probe_gtx()
-    print(f"[probe] Google gtx reachable: {GTX_OK}  (will use MyMemory fallback regardless)")
+    UAPIS_OK = probe_uapis()
+    print(f"[probe] gtx reachable: {GTX_OK} | uapis.cn reachable: {UAPIS_OK}  (fallback: MyMemory)")
     total = 0
     files = sorted(glob.glob(f"{REPO}/**/values-zh-rCN/*.xml", recursive=True))
     for f in files:
         if "/fixtures/" in f.replace("\\", "/"):
             continue
+        if QUOTA_EXHAUSTED:
+            print("[abort] MyMemory quota exhausted; stopping to avoid wasted time.")
+            break
         try:
             tree = etree.parse(f)
         except Exception as e:
             print("parse fail", f, e); continue
         changed = False
         for el in tree.getroot().iter():
+            if QUOTA_EXHAUSTED:
+                break
             if el.tag in ("string", "item"):
                 t = el.text or ""
                 if t and alpha.search(t) and not cjk.search(t):
@@ -124,7 +219,7 @@ def main():
                         changed = True
                         total += 1
                         print(f"  +{total} {el.get('name')}")
-                    time.sleep(0.35)  # gentle pace for MyMemory free rate limit
+                    time.sleep(1.2)  # gentle pace to avoid tripping free-rate limits
         if changed:
             tree.write(f, xml_declaration=True, encoding="utf-8")
     print(f"DONE. translated {total} entries this run.")
