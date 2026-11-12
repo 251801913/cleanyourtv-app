@@ -16,7 +16,7 @@
 
     <!-- Credential prompt (D17) -->
     <string name="gate_title">确认您的身份</string>
-    <string name="gate_subtitle">在{tv}上更改任何内容之前</string>
+    <string name="gate_subtitle">在 {tv}上更改任何内容之前</string>
     <string name="gate_subtitle_reset_key">在我们重置此手机的密钥之前</string>
     <string name="gate_subtitle_delete_all">在我们删除所有内容之前</string>
     <string name="gate_negative">取消</string>
@@ -30,7 +30,7 @@
     <string name="manage_state_original">原始</string>
     <string name="manage_checked">已检查 {date}</string>
     <string name="manage_tv_card_cd">{tv}。{state}。{checked}。</string>
-    <string name="manage_thumbnail_cd">{tv}的最后一张照片。轻触以刷新。</string>
+    <string name="manage_thumbnail_cd"> {tv}的最后一张照片。轻触以刷新。</string>
     <!-- 0.4.7 (UX finding 20, PM 11): the one name for the way back into Setup, shown for every TV -->
     <string name="manage_clean_again">再次安装</string>
     <string name="manage_level_simple">简单</string>
@@ -64,7 +64,7 @@
     <!-- 0.4.8: what the app counted across the TV's restarts (Restarts), and the one tap that tells us -->
     <string name="manage_restarts_held">{count, 复数, 单数 {已保留通过 # 次重启} 其他 {已保留通过 # 次重启}}</string>
     <string name="manage_restarts_ask">这算作这款电视机型号。你看看先进行哪一步。</string>
-    <string name="manage_restarts_told">您在{date}告知了我们。谢谢。</string>
+    <string name="manage_restarts_told">您在 {date}告知了我们。谢谢。</string>
     <string name="manage_restarts_tell">告诉我们它起作用了</string>
     <string name="manage_restarts_tell_again">再告诉我们一次</string>
     <string name="manage_restart_failed">电视重启后恢复到了它自己的主屏幕。</string>
@@ -83,7 +83,7 @@
     <string name="debugstep_nowifi_body">连接与电视相同的Wi-Fi。我们会自行继续。</string>
     <string name="debugstep_allow_title">看电视并允许这台手机</string>
     <string name="debugstep_allow_body">电视正在询问“允许USB调试？”。勾选“始终允许”，然后选择允许（在某些电视上是点击确定）。</string>
-    <string name="debugstep_allow_code">电视上的代码以{tail}结尾。那就是这部手机。</string>
+    <string name="debugstep_allow_code">电视上的代码以 {tail}结尾。那就是这部手机。</string>
     <string name="debugstep_allow_waiting">正在等待您轻触电视...</string>
     <string name="debugstep_details_show">显示详情</string>
     <string name="debugstep_details_hide">隐藏详情</string>
@@ -117,10 +117,10 @@
     <string name="appsettings_details_note">该应用所能看到的您的Wi-Fi和电视，用于复制或共享</string>
 
     <!-- A Manage write that paused and left its run open (R5-W8 O2) -->
-    <string name="openwrite_title">{tv}上的一个更改未完成</string>
+    <string name="openwrite_title"> {tv} 上的一个更改未完成</string>
     <string name="openwrite_body_lost">电视在进行到一半时停止了响应。请继续完成剩余部分，或者撤销我们已经做的操作。在此之前，这台电视上不会有任何更改。</string>
     <string name="openwrite_body">我们中途停止了。继续完成剩余部分，或者撤销我们所做的操作。在此之前，这台电视上不会有任何其他更改。</string>
-    <string name="openwrite_body_setup">{tv}的设置未完成。打开它以继续或撤销我们所做的操作。</string>
+    <string name="openwrite_body_setup"> {tv} 的设置未完成。打开它以继续或撤销我们所做的操作。</string>
     <string name="openwrite_not_taken">电视没有响应。请检查它是否已开机，并且与此手机连接在同一个Wi-Fi网络上，然后重试。</string>
     <string name="openwrite_busy">正在处理中...</string>
     <string name="openwrite_carry_on">继续</string>
@@ -133,12 +133,12 @@
     <string name="openwrite_open_setup">打开设置</string>
     <string name="openwrite_later">现在不行</string>
     <string name="openwrite_report">上报软件问题</string>
-    <string name="openwrite_title_took_home">{app}占用了“主页”按钮</string>
-    <string name="openwrite_body_took_home">一旦{app}重新开启，电视就会给它Home按钮，因此Home不再打开新的主屏幕。再次关闭{app}即可恢复新屏幕，或者就保持。</string>
+    <string name="openwrite_title_took_home">{app} 占用了“主页”按钮</string>
+    <string name="openwrite_body_took_home">一旦 {app} 重新开启，电视就会给它Home按钮，因此Home不再打开新的主屏幕。再次关闭 {app} 即可恢复新屏幕，或者就保持。</string>
     <string name="openwrite_switch_off_again">把它再关掉</string>
     <string name="openwrite_keep_it">保留它</string>
     <!-- 0.4.7 (UX finding 19): a look send that paused did not reach the TV -->
-    <string name="openwrite_title_look">你的外观没有达到{tv}</string>
+    <string name="openwrite_title_look">你的外观没有达到 {tv}</string>
     <string name="openwrite_body_look">其他一切都没有改变。再次发送，或者撤销以保持电视原有的外观。在此之前，这台电视上的其他任何内容都无法更改。</string>
     <string name="openwrite_send_again">再发送一次</string>
 
@@ -148,16 +148,16 @@
     <string name="switchedoff_group_ads">广告和赞助行</string>
     <string name="switchedoff_group_tracking">追踪与分析</string>
     <string name="switchedoff_group_nobody">没人想要的App</string>
-    <string name="switchedoff_group_brand">{brand}额外服务</string>
+    <string name="switchedoff_group_brand">{brand} 额外服务</string>
     <string name="switchedoff_group_shop">商店与演示模式</string>
     <string name="switchedoff_group_needed">新主屏幕所需</string>
     <string name="switchedoff_group_other">在“自定义”下选择</string>
     <string name="switchedoff_put_back">放回</string>
-    <string name="switchedoff_put_back_cd">把{name}放回去</string>
+    <string name="switchedoff_put_back_cd">把 {name} 放回去</string>
     <string name="switchedoff_group_better">更好地回到</string>
     <string name="switchedoff_better_kept">这台电视的列表现在保持开启状态。</string>
     <string name="switchedoff_switch_back_on">重新开启</string>
-    <string name="switchedoff_switch_back_on_cd">重新开启{name}</string>
+    <string name="switchedoff_switch_back_on_cd">重新开启 {name} </string>
     <string name="switchedoff_snackbar">{name} 重新上线了。</string>
     <string name="switchedoff_empty">现在没有任何东西被关闭。</string>
     <string name="switchedoff_empty_sub">电视上的所有东西都开着。</string>
@@ -187,7 +187,7 @@
     <string name="tvsettings_last_seen">上次看到 {date}</string>
     <string name="tvsettings_forget">忘掉这台电视</string>
     <string name="tvsettings_forget_explain">这将从本手机中删除此电视的记录、日志和还原点。电视本身不会发生变化，但此后您将无法在本手机上撤销操作</string>
-    <string name="tvsettings_forget_title">忘记{tv}了吗？</string>
+    <string name="tvsettings_forget_title">忘记 {tv}了吗？</string>
     <string name="tvsettings_forget_confirm">忘掉这台电视</string>
     <string name="tvsettings_forget_busy">设置程序仍在处理这台电视。请等待其完成或先停止它。</string>
 
@@ -248,7 +248,7 @@
     <string name="manage_help_add_tv_banner">我们以前没见过这款电视，所以我们很小心地对待它。您提供的一份简短报告能帮助我们添加它。</string>
     <string name="manage_help_add_tv">帮助添加此电视</string>
     <!-- 0.4.7 (must 4): the report sent before (SentReports) -->
-    <string name="manage_report_sent_banner">您在{date}提交了关于这台电视的报告。一旦有消息，我们会在您的反馈单中发布。</string>
+    <string name="manage_report_sent_banner">您在 {date}提交了关于这台电视的报告。一旦有消息，我们会在您的反馈单中发布。</string>
     <string name="manage_send_again">重新发送</string>
     <string name="manage_wizard_home_title">设置向导可以占用主页按钮</string>
     <string name="manage_wizard_home_body">重新开启电视自带的主屏幕，以便电视能正常启动。</string>
@@ -276,14 +276,14 @@
     <string name="report_in_link_short_hint">GitHub 上的表单打开时会显示此报告，其中仅包含日志的最新几行，以便能够显示。如果您愿意，可以添加几句话，然后发布。我们也会复制整份报告，以防我们需要索取其余内容。</string>
     <string name="report_too_long">此报告太长，无法自行输入表单，因此我们为您复制了该报告。在 GitHub 上，长按报告框，选择“粘贴”，然后发布。</string>
     <string name="report_share">共享</string>
-    <string name="report_loading">Making the report</string>
-    <string name="report_unavailable">We need to read this TV once before we can make its report. Set it up or connect to it, then try again.</string>
+    <string name="report_loading">做报告</string>
+    <string name="report_unavailable">我们需要先看一遍这个电视，然后才能做报道。设置或连接到它，然后重试。</string>
     <!-- 0.4.7 (must 4): the TV report was sent before; the issue link once pasted -->
-    <string name="report_sent_line">您在{date}发送了此电视的报告。有消息时，我们会在您的问题中发布。您可以再次发送。</string>
-    <string name="report_sent_issue">您的问题：{issue}。打开以查看最新消息。</string>
+    <string name="report_sent_line">您在 {date}发送了此电视的报告。有消息时，我们会在您的问题中发布。您可以再次发送。</string>
+    <string name="report_sent_issue">您的问题： {issue}。打开以查看最新消息。</string>
     <string name="report_issue_label">您的问题的链接（可选）</string>
     <string name="report_issue_hint">请粘贴报告所指向的问题的链接，我们会将该链接记录在此处。</string>
-    <string name="report_issue_error">That isn\'t a link to an issue of this app on GitHub.</string>
+    <string name="report_issue_error">这不是GitHub上这个应用程序的一个链接。</string>
     <string name="report_issue_save">记住它</string>
     <string name="report_issue_open">打开问题</string>
 </resources>

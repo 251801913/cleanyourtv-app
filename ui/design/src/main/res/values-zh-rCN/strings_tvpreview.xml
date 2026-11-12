@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- The words drawn inside the TV preview (TvPreview), as the TV's home screen shows them: the
      day's greeting by the hour (shown in capitals), the clock's AM and PM, and the buttons at the top. --><resources>
-    <string name="cyt_tv_good_morning">Good morning</string>
-    <string name="cyt_tv_good_afternoon">Good afternoon</string>
-    <string name="cyt_tv_good_evening">Good evening</string>
-    <string name="cyt_tv_good_night">Good night</string>
-    <string name="cyt_tv_am">AM</string>
-    <string name="cyt_tv_pm">PM</string>
-    <string name="cyt_tv_inputs">Inputs</string>
-    <string name="cyt_tv_wifi">Home Wi-Fi</string>
+    <string name="cyt_tv_good_morning">早上好</string>
+    <string name="cyt_tv_good_afternoon">下午好</string>
+    <string name="cyt_tv_good_evening">晚上好</string>
+    <string name="cyt_tv_good_night">晚安</string>
+    <string name="cyt_tv_am">上午</string>
+    <string name="cyt_tv_pm">下午</string>
+    <string name="cyt_tv_inputs">输入</string>
+    <string name="cyt_tv_wifi">家庭Wi-Fi</string>
     <string name="cyt_tv_settings">设置</string>
 </resources>

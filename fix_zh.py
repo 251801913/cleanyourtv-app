@@ -18,12 +18,16 @@ English source instead of writing a corrupt string.
 Usage (run from this repo's root directory):
   python3 fix_zh.py
 """
-import os, re, sys, json, time, glob
+import os, re, sys, json, time, glob, base64, hmac, hashlib, email.utils
 import urllib.parse, urllib.request, urllib.error
 from lxml import etree
 
 REPO = sys.argv[1] if len(sys.argv) > 1 else "."
 MYMEMORY_EMAIL = os.environ.get("MYMEMORY_EMAIL", "")  # optional, raises MyMemory quota
+# 讯飞 XFTrans WebAPI credentials (read from env to keep secrets out of the repo).
+XFYUN_APPID = os.environ.get("XFYUN_APPID", "")
+XFYUN_API_KEY = os.environ.get("XFYUN_API_KEY", "")
+XFYUN_API_SECRET = os.environ.get("XFYUN_API_SECRET", "")
 
 cjk = re.compile(r"[\u4e00-\u9fff]")
 alpha = re.compile(r"[A-Za-z]")
@@ -34,6 +38,7 @@ SIMPLE = re.compile(r"\{(\w+)\}")
 GTX_OK = True  # refined by probe()
 UAPIS_OK = True  # refined by probe(); uapis.cn (free, no key, China-reachable)
 MYMEM_OK = True  # refined by fast probe; MyMemory fallback
+XFYUN_OK = False  # refined by probe_xfyun()
 QUOTA_EXHAUSTED = False  # set True once MyMemory daily quota is hit
 
 
@@ -99,6 +104,53 @@ def mymem(q):
     if data.get("responseStatus") != 200:
         raise RuntimeError(data.get("responseDetails", "mymemory error"))
     return text
+
+
+def xfyun(q):
+    """iFLYTEK (讯飞) XFTrans WebAPI — primary backend (key required, China-reachable).
+
+    POSTs to https://itrans.xf-yun.com/v1/its with an HMAC-SHA256 signature in
+    the `authorization` query param. English -> Chinese uses from=en, to=cn.
+    Response payload.result.text is base64 of {"trans_result":{"dst":...}}.
+    """
+    if not (XFYUN_APPID and XFYUN_API_KEY and XFYUN_API_SECRET):
+        raise RuntimeError("xfyun credentials missing (set XFYUN_APPID/_API_KEY/_API_SECRET)")
+    host = "itrans.xf-yun.com"
+    date = email.utils.formatdate(usegmt=True)  # RFC1123 GMT, e.g. Thu, 12 Nov 2026 02:31:39 GMT
+    request_line = "POST /v1/its HTTP/1.1"
+    signature_origin = f"host: {host}\ndate: {date}\n{request_line}"
+    digest = hmac.new(XFYUN_API_SECRET.encode("utf-8"),
+                      signature_origin.encode("utf-8"),
+                      hashlib.sha256).digest()
+    signature = base64.b64encode(digest).decode("ascii")
+    auth_origin = (f'api_key="{XFYUN_API_KEY}", algorithm="hmac-sha256", '
+                   f'headers="host date request-line", signature="{signature}"')
+    authorization = base64.b64encode(auth_origin.encode("utf-8")).decode("ascii")
+    url = (f"https://{host}/v1/its"
+           f"?authorization={urllib.parse.quote(authorization)}"
+           f"&host={urllib.parse.quote(host)}"
+           f"&date={urllib.parse.quote(date)}")
+    body = {
+        "header": {"app_id": XFYUN_APPID, "status": 3, "res_id": ""},
+        "parameter": {"its": {"from": "en", "to": "cn", "result": {}}},
+        "payload": {"input_data": {
+            "encoding": "utf8", "status": 3,
+            "text": base64.b64encode(q.encode("utf-8")).decode("ascii")}},
+    }
+    raw = _request(url, 15, {"Content-Type": "application/json"},
+                  data=json.dumps(body).encode("utf-8"))
+    data = json.loads(raw)
+    code = (data.get("header") or {}).get("code")
+    if code != 0:
+        raise RuntimeError(f"xfyun header code {code}: {(data.get('header') or {}).get('message')}")
+    res_b64 = (data.get("payload") or {}).get("result", {}).get("text", "")
+    if not res_b64:
+        raise RuntimeError("xfyun empty payload")
+    res = json.loads(base64.b64decode(res_b64).decode("utf-8"))
+    dst = (res.get("trans_result") or {}).get("dst", "")
+    if not dst:
+        raise RuntimeError("xfyun empty dst")
+    return dst
 
 
 def uapis(q):
@@ -191,12 +243,23 @@ def probe_uapis():
         return False
 
 
+def probe_xfyun():
+    """Return True only if xfyun credentials are set and a trivial call works."""
+    if not (XFYUN_APPID and XFYUN_API_KEY and XFYUN_API_SECRET):
+        return False
+    try:
+        return bool(xfyun("hi"))
+    except Exception:
+        return False
+
+
 def tr(t):
     if not t.strip() or not alpha.search(t):
         return t
     if QUOTA_EXHAUSTED:
         return t
-    backends = ([uapis] if UAPIS_OK else []) + ([gtx] if GTX_OK else []) + ([mymem] if MYMEM_OK else [])
+    backends = (([xfyun] if XFYUN_OK else []) + ([uapis] if UAPIS_OK else [])
+                + ([gtx] if GTX_OK else []) + ([mymem] if MYMEM_OK else []))
     for fn in backends:
         for attempt in range(2):
             try:
@@ -210,18 +273,19 @@ def tr(t):
 
 
 def main():
-    global GTX_OK, UAPIS_OK, MYMEM_OK
+    global GTX_OK, UAPIS_OK, MYMEM_OK, XFYUN_OK
     GTX_OK = probe_gtx()
     # Fast, non-backoff liveness probes so a rate-limited backend is detected
     # quickly instead of after many slow retries.
+    XFYUN_OK = probe_xfyun()
     uapis_alive = _alive(UAPIS_PROBE_URL, data=UAPIS_PROBE_BODY,
                          headers={"Content-Type": "application/json", "User-Agent": "cleanyourtv-zh/1.0"})
     mymem_alive = _alive(MYMEM_PROBE_URL, headers={"User-Agent": "cytv-fix/1.0"})
     UAPIS_OK = uapis_alive
     MYMEM_OK = mymem_alive
-    print(f"[probe] gtx={GTX_OK} | uapis.cn={uapis_alive} | mymem={mymem_alive}")
-    if not uapis_alive and not mymem_alive:
-        print("[abort] both uapis.cn and MyMemory are rate-limited right now; "
+    print(f"[probe] xfyun={XFYUN_OK} | gtx={GTX_OK} | uapis.cn={uapis_alive} | mymem={mymem_alive}")
+    if not (XFYUN_OK or uapis_alive or mymem_alive):
+        print("[abort] all backends rate-limited/unavailable right now; "
               "exiting so the cooldown loop can wait out the window.")
         return
     total = 0

@@ -18,8 +18,8 @@
     <string name="welcome_body">关闭杂乱，保留您使用的应用程序，并获得平静的主屏幕。五分钟。一切都可以放回去。</string>
     <string name="welcome_hero_cd">一个充满赞助行的电视主屏幕变成一个干净的主屏幕，底部有四个应用程序</string>
     <string name="welcome_looking">正在查找Wi-Fi上的电视...</string>
-    <string name="welcome_found_one">找到{name} （ {room} ）</string>
-    <string name="welcome_found_one_noroom">找到{name}</string>
+    <string name="welcome_found_one">找到 {name} （ {room} ）</string>
+    <string name="welcome_found_one_noroom">找到 {name}</string>
     <string name="welcome_found_many">{count, plural, one {找到#个电视} other {找到#个电视}}</string>
     <string name="welcome_none_yet">还没有电视。继续，我们会继续寻找。</string>
     <string name="welcome_start">启动</string>
@@ -33,7 +33,7 @@
     <string name="picker_name_with_suffix">{name} ...{suffix}</string>
     <string name="picker_platform_android_tv">Android TV {version}</string>
     <string name="picker_platform_google_tv">Google TV {version}</string>
-    <string name="picker_platform_fire_tv">Fire TV</string>
+    <string name="picker_platform_fire_tv">消防电视</string>
     <string name="picker_footer">手机和电视必须在同一台无线网络上。</string>
     <string name="picker_primary">使用 {name}</string>
     <string name="picker_tertiary">输入电视地址</string>
@@ -43,7 +43,7 @@
     <!-- S2a Let the phone in (steps) -->
     <string name="door_title">让手机进入</string>
     <string name="door_body">拿起电视遥控器。这大约需要一分钟，是唯一繁琐的部分。</string>
-    <string name="door_step_cd">第{current}步，共{total}步</string>
+    <string name="door_step_cd">第 {current} 步，共 {total}步</string>
     <string name="door_next">下一步</string>
     <string name="door_menu_names_vary">电视上的菜单名称可能略有不同。</string>
     <string name="door_same_wifi">手机和电视必须在同一台无线网络上。</string>
@@ -51,13 +51,13 @@
     <string name="door_connecting">连接中...</string>
     <string name="door_still_waiting">仍在等待。USB调试是否已打开？有些电视也需要网络调试。</string>
     <string name="door_still_waiting_show_me">作品展示</string>
-    <string name="door_change_model">不是{model} ？更改模型</string>
+    <string name="door_change_model">不是 {model} ？更改模型</string>
     <string name="door_change_model_generic">不是此电视？更改型号</string>
     <!-- Round 3: the S1b tertiary's words, for a door Start opened on the one device found -->
     <string name="door_not_this_tv">不是这台电视机？请输入电视机地址</string>
     <string name="door_brand_prompt">哪个品牌？</string>
     <string name="door_brand_xiaomi">小米</string>
-    <string name="door_brand_tcl">Tcl</string>
+    <string name="door_brand_tcl">TCL</string>
     <string name="door_brand_sony">索尼</string>
     <string name="door_brand_hisense">海信</string>
     <string name="door_brand_philips">飞利浦</string>
@@ -125,7 +125,7 @@
     <string name="allow_still_waiting">仍在电视上等待OK。</string>
     <string name="allow_trusted">可信</string>
     <string name="allow_dont_see">我没有在电视上看到它</string>
-    <string name="allow_art_cd">电视的“允许USB调试”框。指纹以{tail}结尾。</string>
+    <string name="allow_art_cd">电视的“允许USB调试”框。指纹以 {tail}结尾。</string>
 
     <!-- S2c sheet: I don't see it on the TV (UX 4.4) -->
     <string name="notseen_title">我没有在电视上看到它</string>
@@ -138,10 +138,10 @@
     <string name="notseen_restarted">我已重新启动</string>
 
     <!-- S2d Connected, and the identity check "Is this your TV?" (D38) -->
-    <string name="connected_title">已连接到{tv}</string>
+    <string name="connected_title">已连接到 {tv}</string>
     <string name="connected_cd">已連線</string>
     <string name="identity_question">这是您的电视吗？</string>
-    <string name="identity_detail">{name} ，序列结尾为{serial}</string>
+    <string name="identity_detail">{name} ，序列结尾为 {serial}</string>
     <string name="identity_body">请检查图片是否正是您的电视当前显示的内容。</string>
     <string name="identity_screenshot_cd">电视正在播放的内容</string>
     <string name="identity_yes">是的，那是我的</string>
@@ -176,7 +176,7 @@
 
     <!-- Stop: identity changed (D37) -->
     <string name="stop_identity_changed_title">另一台电视在此地址应答</string>
-    <string name="stop_identity_changed_body">此地址的电视不是我们设置为{name}的电视。其地址可能已更改，或已被另一台电视占用。我们在改变任何东西之前都停了下来。</string>
+    <string name="stop_identity_changed_body">此地址的电视不是我们设置为 {name}的电视。其地址可能已更改，或已被另一台电视占用。我们在改变任何东西之前都停了下来。</string>
     <string name="stop_identity_changed_primary">再找一遍</string>
     <string name="stop_identity_changed_secondary">返回</string>
 

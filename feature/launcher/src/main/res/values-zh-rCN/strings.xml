@@ -15,7 +15,7 @@
 
     <!-- Credential prompt (D17), raised by "Send mine again" and "Use the TV's own home screen" -->
     <string name="gate_title">确认您的身份</string>
-    <string name="gate_subtitle">在{tv}上更改任何内容之前</string>
+    <string name="gate_subtitle">在 {tv}上更改任何内容之前</string>
     <string name="gate_negative">取消</string>
     <string name="gate_failed">我们无法确认您的身份，因此没有任何更改。</string>
 
@@ -37,8 +37,8 @@
 
     <!-- 0.3.3 D2 (issue #3): the new home screen isn't on this TV, so there is no dock or look to change.
          The lead, then why (the reason Setup recorded), then what can change it, when something can. -->
-    <string name="home_not_on_tv_lead">{tv}保留自己的主屏幕。坞站和外观属于新的主屏幕，它不在这台电视上。</string>
-    <string name="home_not_on_tv_refuses">{brand}只允许自己的主屏幕，因此设置没有添加我们的主屏幕。没有它，清理工作就开始了。</string>
+    <string name="home_not_on_tv_lead">{tv} 保留自己的主屏幕。坞站和外观属于新的主屏幕，它不在这台电视上。</string>
+    <string name="home_not_on_tv_refuses">{brand} 只允许自己的主屏幕，因此设置没有添加我们的主屏幕。没有它，清理工作就开始了。</string>
     <string name="home_not_on_tv_old_android">新的主屏幕需要Android 8或更高版本，因此安装程序未添加它。没有它，清理工作就开始了。</string>
     <string name="home_not_on_tv_unknown_home">我们不太了解这台电视的主屏幕，无法安全地切换，因此安装程序将其单独保留。</string>
     <string name="home_not_on_tv_wizard_wifi">此电视的Wi-Fi已通过其设置向导保存。新的主屏幕需要关闭向导，这会忘记Wi-Fi ，并且将向导留在电视上可能会崩溃。因此，安装程序独自离开了主屏幕。</string>
@@ -81,13 +81,13 @@
     <string name="home_by_design">这是故意设计的，而不是故障：设置是根据电视的内容决定的。上面有什么可以改变它。如果电视后来发生了变化，我们仍会收到问题报告。</string>
     <string name="home_tv_list">查看哪些电视获得了新的主屏幕</string>
     <!-- 0.4.7 (must 4): the report sent before (SentReports) -->
-    <string name="home_report_sent">您在{date}发送了此电视的报告。有消息时，我们会在您的问题中发布。您可以再次发送。</string>
+    <string name="home_report_sent">您在 {date}发送了此电视的报告。有消息时，我们会在您的问题中发布。您可以再次发送。</string>
     <!-- Under the Dock and Look rows (look2, spec 11.1): a send from the phone replaces what was
          changed with the TV's own Launcher settings (launcher 2.4 and later). -->
     <string name="home_tv_changes_note">当您从此处发送时，电视上更改的设置将被替换。</string>
     <!-- look2 Look row: what was last sent, then how many apps in a row -->
-    <string name="home_row_look_summary_picture">带有{picture}的{style}</string>
-    <string name="home_row_look_summary_photo">{style}与您的照片</string>
+    <string name="home_row_look_summary_picture">带有 {picture}的{style} </string>
+    <string name="home_row_look_summary_photo">{style} 与您的照片</string>
     <string name="home_row_look_summary_none">{style} ，无图片</string>
     <string name="home_row_look_columns">{count, plural, one {#个应用程序在一行} other {#个应用程序在一行}}</string>
     <string name="home_row_look_sending">发送中……</string>
@@ -97,11 +97,11 @@
 
     <!-- M2 Update the home screen (D4): a newer build of our home screen, installed over the old one -->
     <string name="home_row_update">更新主屏幕</string>
-    <string name="home_row_update_note">版本{version}已准备就绪。您的码头和样子保持原样。</string>
+    <string name="home_row_update_note">版本 {version} 已准备就绪。您的码头和样子保持原样。</string>
     <string name="home_update_preview_title">是否更新主屏幕？</string>
-    <string name="home_update_preview_body">我们将在电视上安装版本{version}。码头、外观和卡片答案保持不变。如果现在是电视的主屏幕，则重新启动一次。</string>
+    <string name="home_update_preview_body">我们将在电视上安装版本 {version} 。码头、外观和卡片答案保持不变。如果现在是电视的主屏幕，则重新启动一次。</string>
     <string name="home_update_confirm">更新</string>
-    <string name="home_update_done">主屏幕是最新的：版本{version}。</string>
+    <string name="home_update_done">主屏幕是最新的：版本 {version}。</string>
 
     <!-- M2 Use the TV's own home screen: preview, then narration -->
     <string name="home_stock_preview_title">使用电视机自己的主屏幕？</string>
@@ -112,7 +112,7 @@
 
     <!-- M2 Look (theme picker) -->
     <string name="theme_default">默认</string>
-    <string name="home_look_ended_banner">{picture}已结束。是否将您之前的图片放回电视上？</string>
+    <string name="home_look_ended_banner">{picture} 已结束。是否将您之前的图片放回电视上？</string>
     <string name="home_look_ended_restore">放回原位</string>
 
     <!-- S3b Your dock (sheet) -->

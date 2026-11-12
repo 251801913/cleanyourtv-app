@@ -18,14 +18,14 @@
 
     <!-- Credential prompt (D17) -->
     <string name="gate_title">确认您的身份</string>
-    <string name="gate_subtitle">在{tv}上更改任何内容之前</string>
+    <string name="gate_subtitle">在 {tv}上更改任何内容之前</string>
     <string name="gate_negative">取消</string>
     <string name="gate_failed">我们无法确认您的身份，因此没有任何更改。</string>
 
     <!-- Notifications (D18, D16) -->
     <string name="notify_channel_name">设置电视</string>
     <string name="notify_channel_description">当手机更改电视上的内容时显示进度，并告诉您何时查看电视。</string>
-    <string name="notify_progress" formatted="false">正在设置{tv}，{percent}%</string>
+    <string name="notify_progress" formatted="false">正在设置 {tv}， {percent}%</string>
     <string name="notify_look">请看电视。轻触即可接听。</string>
     <string name="notify_rationale">到了看电视的时间，我们会提醒您。允许接收通知，以便在手机在口袋里时也能正常工作。</string>
     <string name="notify_rationale_allow">允许通知</string>
@@ -57,21 +57,21 @@
     <string name="found_group_ads">广告和赞助商行</string>
     <string name="found_group_tracking">追踪与分析</string>
     <string name="found_group_nobody">没人需要的应用程序</string>
-    <string name="found_group_brand">{brand}额外服务</string>
+    <string name="found_group_brand">{brand} 额外服务</string>
     <string name="found_group_shop">商店和演示模式</string>
     <string name="found_group_needed">新主屏幕所需</string>
     <string name="found_group_count_cd">{group}：{count, plural, one {# 项} other {# 项}}</string>
     <string name="found_see_list">查看列表</string>
     <string name="found_keep_intro">我们会保留您使用过的所有内容：</string>
-    <string name="found_keep_paragraph">我们会保留您使用的所有内容：{apps}、{fixed}。</string>
-    <string name="found_keep_paragraph_no_apps">我们会保留您使用的所有内容：{fixed}。</string>
+    <string name="found_keep_paragraph">我们会保留您使用的所有内容： {apps}、 {fixed}。</string>
+    <string name="found_keep_paragraph_no_apps">我们会保留您使用的所有内容： {fixed}。</string>
     <string name="found_keep_fixed">直播电视和HDMI、遥控器、键盘、Chromecast、语音助手和软件更新</string>
     <!-- UX finding 25: a Fire TV has no Chromecast -->
     <string name="found_keep_fixed_fire">直播电视和 HDMI、遥控器、键盘、语音助手和软件更新</string>
-    <string name="found_home_row">主屏幕：{dock}</string>
+    <string name="found_home_row">主屏幕： {dock}</string>
     <!-- The dock with rows under it: the dock's apps, then how many more sit in the rows -->
-    <string name="found_home_row_rows">主屏幕：{dock}，以及下方的{count, plural, one {# 个应用} other {# 个应用}}</string>
-    <string name="found_home_row_cd">主屏幕停靠栏：{dock}</string>
+    <string name="found_home_row_rows">主屏幕： {dock}，以及下方的{count, plural, one {# 个应用} other {# 个应用}}</string>
+    <string name="found_home_row_cd">主屏幕停靠栏： {dock}</string>
     <string name="found_home_change">变动</string>
     <!-- An empty dock: the row names the new home screen (UX 2 dock card title) instead of a blank list -->
     <string name="found_home_row_empty">您的新主屏幕</string>
@@ -90,7 +90,7 @@
     <string name="found_unknown_body">我们以前从未见过这款电视，因此我们正谨慎行事。一旦我们有了这台电视的列表，就可以关闭更多功能。帮助添加此电视，就完成了一项。</string>
     <string name="found_help_add_tv">帮助添加此电视</string>
     <!-- 0.4.7: this TV's report was sent before (SentReports) -->
-    <string name="found_report_sent">您在{date}发送了此电视的报告。有消息时，我们会在您的问题中发布。您可以再次发送。</string>
+    <string name="found_report_sent">您在 {date}发送了此电视的报告。有消息时，我们会在您的问题中发布。您可以再次发送。</string>
     <!-- 0.4.7, the "home screen kept" state (HomeKept, UX findings 4, 12 and 13): one outcome line on
          every screen, one short reason per block, and the long reason with what would change it in
          the Why sheet. Every long reason ends with the same sentence. -->
@@ -105,7 +105,7 @@
     <string name="kept_tv_list">查看哪些电视获得了新的主屏幕</string>
     <string name="kept_clean_up_note">我们仍然会关闭广告、跟踪功能以及在后台运行的应用程序。由电视机自带主屏幕显示的广告将保留。</string>
     <!-- The short reasons, one per HomeBlock -->
-    <string name="kept_reason_tv_refuses">{brand}电视仅允许使用其自己的主屏幕。</string>
+    <string name="kept_reason_tv_refuses">{brand} 电视仅允许使用其自己的主屏幕。</string>
     <string name="kept_reason_fire_tv">Fire TV 仅允许使用其自己的主屏幕。</string>
     <string name="kept_reason_old_android">新主屏幕需要 Android 8 或更高版本。</string>
     <string name="kept_reason_unknown_home">我们对这台电视的主屏幕不够了解，无法安全地进行切换。</string>
@@ -121,7 +121,7 @@
     <string name="kept_reason_patchwall_feeds">PatchWall 已开启，而小米电视+ 已关闭。关闭 PatchWall 以获取新版本。</string>
     <string name="kept_reason_none">此电视目前无法切换。</string>
     <!-- The long reasons (the Why sheet) -->
-    <string name="found_home_tv_refuses">{brand}电视仅允许使用其自带的主屏幕，无法安装新的主屏幕。因此，这台电视将保留其自己的主屏幕。</string>
+    <string name="found_home_tv_refuses">{brand} 电视仅允许使用其自带的主屏幕，无法安装新的主屏幕。因此，这台电视将保留其自己的主屏幕。</string>
     <string name="found_home_fire_tv">Fire TV 仅允许使用其自带的主屏幕，无法安装新的主屏幕。因此，这台电视保留了自己的主屏幕。</string>
     <string name="found_home_old_android">新主屏幕需要 Android 8 或更高版本，而这台电视运行的是旧版本。因此，这台电视将保留其自己的主屏幕。</string>
     <string name="found_home_changed">这台电视的“主屏幕”已被其他应用程序更改，或此前已更改过，我们不会撤销此类选择。因此，这台电视将保留其自己的主屏幕。</string>
@@ -159,7 +159,7 @@
     <string name="customise_group_cast">铬铸</string>
     <string name="customise_group_updates">软件更新</string>
     <string name="customise_group_streaming">您不使用的流媒体应用程序</string>
-    <string name="customise_group_brand_features">{brand} features</string>
+    <string name="customise_group_brand_features">{brand} 特点</string>
     <string name="customise_updates_note">保持开启，以便电视持续获得安全补丁。关闭后，更新提示也会停止。</string>
     <!-- 0.4.7 (UX finding 3): the home screen's own rows in the app's words, by HomeRole -->
     <string name="customise_wizard_name">安装向导</string>
@@ -174,15 +174,15 @@
     <string name="customise_protected_pill">受保护</string>
     <string name="customise_protected_why_title">我们为什么保留这个</string>
     <string name="customise_group_home">主屏幕</string>
-    <string name="customise_dock_row">停靠：{names}</string>
-    <string name="customise_dock_row_rows">Dock: {names}, plus {count, plural, one {# app} other {# apps}} in the {rows, plural, one {row} other {rows}} below</string>
+    <string name="customise_dock_row">停靠： {names}</string>
+    <string name="customise_dock_row_rows">Dock： {names}，加上{count，plural，one{#app}other{#apps}}在下面的{rows，plural，one {row} other {rows}}中</string>
     <string name="customise_dock_row_empty">【10】水库</string>
-    <string name="customise_look_row">查看：{theme}</string>
+    <string name="customise_look_row">查看： {theme}</string>
     <!-- 0.4.7: the {theme} of the two rows for a look with the person's own photo, or a picture of the gallery -->
-    <string name="customise_look_photo">{style}与您的照片</string>
-    <string name="customise_look_picture">带有{picture}的{style}</string>
+    <string name="customise_look_photo">{style} 与您的照片</string>
+    <string name="customise_look_picture">带有 {picture}的{style} </string>
     <!-- 0.4.0: the look and its apps in a row, when that is not the look's own -->
-    <string name="customise_look_row_count">查看：{theme}，{count, plural, one {# 个连续的应用程序} other {# 个连续的应用程序}}</string>
+    <string name="customise_look_row_count">查看： {theme}，{count, plural, one {# 个连续的应用程序} other {# 个连续的应用程序}}</string>
     <!-- look2: the photo crop in Setup's look step, under Use this crop (Setup has no Put it on the TV) -->
     <string name="look_photo_after">尚未发送任何内容。当您轻触“清理”时，它会发送到电视。</string>
     <!-- RFC-CURTAIN-1: Custom only; the TV shows the progress while the phone works -->
@@ -196,18 +196,18 @@
     <string name="customise_commands_intro">我们将按顺序运行每个命令。</string>
     <string name="customise_copy_commands">复制为命令</string>
     <string name="customise_commands_copied">已复制</string>
-    <string name="customise_snackbar_kept">{name}将被保留。</string>
-    <string name="customise_snackbar_off">{name}将被关闭。</string>
+    <string name="customise_snackbar_kept">{name} 将被保留。</string>
+    <string name="customise_snackbar_off">{name} 将被关闭。</string>
     <!-- 0.4.7 (UX finding 15): a PatchWall toggle that changes the home screen decision says so -->
     <string name="customise_snackbar_off_home_back">{name} 将被关闭。新主屏幕已重新纳入方案。</string>
-    <string name="customise_snackbar_kept_home_own">{name}将被保留。电视保留自己的主屏幕。</string>
+    <string name="customise_snackbar_kept_home_own">{name} 将被保留。电视保留自己的主屏幕。</string>
 
     <!-- Themes (S3a theme picker) -->
     <string name="theme_default">默认</string>
     <string name="theme_aurora">极光</string>
     <string name="theme_six_columns">六栏 (6)</string>
     <string name="theme_card_cd">{name}. {description}</string>
-    <string name="theme_card_selected_cd">已选择{name}。{description}</string>
+    <string name="theme_card_selected_cd">已选择{name}。 {description}</string>
 
     <!-- S3b Your dock (sheet) -->
     <string name="dock_title">您的码头</string>
@@ -220,17 +220,17 @@
     <string name="working_group_ads">广告</string>
     <string name="working_group_tracking">正在跟踪</string>
     <string name="working_group_nobody">没人需要的应用程序</string>
-    <string name="working_group_brand">{brand}额外服务</string>
+    <string name="working_group_brand">{brand} 额外服务</string>
     <string name="working_group_shop">商店和演示模式</string>
     <string name="working_step_group_active">{total, plural, other {{group}：{done}/#...}}</string>
-    <string name="working_step_group_done">{count, plural, other {{group}已关闭（#个）}}</string>
+    <string name="working_step_group_done">{count, plural, other {{group} 已关闭（#个）}}</string>
     <string name="working_step_install_active">正在安装新主屏幕</string>
     <string name="working_step_install_done">已安装新主屏幕</string>
     <string name="working_step_replace_active">更换主屏幕应用</string>
     <string name="working_step_replace_done">主屏幕应用已替换</string>
     <string name="working_step_home_active">正在切换房源</string>
     <string name="working_step_home_done">已切换房源</string>
-    <string name="working_step_done_cd">{step}, done</string>
+    <string name="working_step_done_cd">{step}，完成</string>
     <string name="working_thumbnail_caption">电视直播</string>
     <string name="working_thumbnail_cd">电视直播</string>
     <string name="working_keep_on">让电视保持开机状态。您可以放下手机；到了看电视的时候，我们会发出提示音。</string>
@@ -243,115 +243,115 @@
     <!-- S4b Can you see it? -->
     <string name="check_overline">查看 </string>
     <string name="check_title">可以 看見 嗎 ？</string>
-    <string name="check_thumbnail_cd">{count, plural, =0 {The TV shows the new home screen with an empty dock} one {The TV shows the new home screen with one app in the dock} other {The TV shows the new home screen with # apps in the dock}}</string>
-    <string name="check_dock_sentence">新版主屏幕，底部设有{dock}。</string>
+    <string name="check_thumbnail_cd">{count，复数，=0{电视显示新的主屏幕，但Dock是空的}一个{电视显示新的主屏幕，但Dock中有一个应用程序}另一个{电视显示新的主屏幕，但Dock中有#个应用程序}}</string>
+    <string name="check_dock_sentence">新版主屏幕，底部设有 {dock} 。</string>
     <string name="check_dock_sentence_empty">主屏幕</string>
     <string name="check_press_home">仅按遥控器上的“主页”按钮一次。请勿在电视上打开其他任何内容。</string>
     <string name="check_live_ok">“主页”将打开新界面</string>
     <string name="check_live_pending_cd">没有检查</string>
     <string name="check_live_done_cd">已选中</string>
     <string name="check_countdown_text">如果我们没有收到您的回复，我们将自行将电视恢复为自带的主屏幕。不用担心。</string>
-    <string name="check_thumbnail_note">If you can\'t see the TV, the picture above is what it shows right now.</string>
-    <string name="check_no_thumbnail_note">We couldn\'t fetch a picture; please look at the TV.</string>
-    <string name="check_yes">Yes, I see it</string>
-    <string name="check_no">No, put it back</string>
+    <string name="check_thumbnail_note">如果你看不见电视，上面的图片就是它现在显示的。</string>
+    <string name="check_no_thumbnail_note">我们找不到一张照片。请看电视。</string>
+    <string name="check_yes">是的，我看到了。</string>
+    <string name="check_no">不，放回去。</string>
 
     <!-- S4c Stopped: the TV's own home screen is back (UX 4.7). 0.4.7 (UX finding 20): it is "the TV's
          own home screen" everywhere, never "the old home screen"; the way back in is "Run Setup again"
          and "open Home screen for this TV" (the page's visible title), never "from Manage". -->
-    <string name="stop_show_details">Show details</string>
+    <string name="stop_show_details">显示详细信息</string>
     <string name="stop_report">上报软件问题</string>
-    <string name="stop_home_wait_hint">Give it a few seconds.</string>
-    <string name="stop_home_setupwraith_title">The TV\'s own home screen is back</string>
+    <string name="stop_home_wait_hint">给它几秒钟。</string>
+    <string name="stop_home_setupwraith_title">电视自己的主屏幕又回来了。</string>
     <!-- UX finding 16: the primary keeps the TV's own home screen (the card asks for something first) -->
-    <string name="stop_home_setupwraith_secondary">Keep the TV\'s own home screen</string>
+    <string name="stop_home_setupwraith_secondary">保留电视自己的主屏幕</string>
     <!-- D3: the wizard saved the TV's Wi-Fi (or the TV could not say), so it is never switched off. -->
-    <string name="stop_home_setupwraith_wifi_body">Your TV\'s Wi-Fi was saved by its setup wizard, so switching the wizard off would forget it. To try the switch, first forget every Wi-Fi network saved on the TV and join yours again. A cable alone doesn\'t change this.</string>
-    <string name="stop_home_setupwraith_wifi_secondary">I\'ve done that, try again</string>
+    <string name="stop_home_setupwraith_wifi_body">你的电视的Wi-Fi被它的设置向导保存了，所以关闭向导会忘记它。要尝试切换，请先忘记电视上保存的所有Wi-Fi网络，然后重新加入您的网络。电缆本身并不能改变这一点。</string>
+    <string name="stop_home_setupwraith_wifi_secondary">我已经做了，再试一次。</string>
     <!-- RF-LAUNCHER-240 F6: the TV could not say who saved its Wi-Fi, so the wizard stayed on. -->
-    <string name="stop_home_setupwraith_wifi_unknown_body">We couldn\'t check who saved this TV\'s Wi-Fi, so we left its setup wizard on to keep the Wi-Fi safe.</string>
-    <string name="stop_home_other_launcher_title">The TV\'s own home screen is back</string>
-    <string name="stop_home_other_launcher_body">Another home screen app, {launcher}, is in charge of Home. We don\'t switch off apps we don\'t know. Choose which one you want.</string>
-    <string name="stop_home_other_launcher_primary">Use the new home screen</string>
-    <string name="stop_home_other_launcher_secondary">Keep {launcher}</string>
+    <string name="stop_home_setupwraith_wifi_unknown_body">我们无法检查谁保存了这台电视的Wi-Fi，所以我们将其设置向导打开以确保Wi-Fi安全。</string>
+    <string name="stop_home_other_launcher_title">电视自己的主屏幕又回来了。</string>
+    <string name="stop_home_other_launcher_body">另一个主屏幕应用程序 {launcher}负责主页。我们不会关闭我们不知道的应用程序。选择你想要的。</string>
+    <string name="stop_home_other_launcher_primary">使用新的主屏幕</string>
+    <string name="stop_home_other_launcher_secondary">保持 {launcher}</string>
     <!-- Issue #629: the check rolled back because a Settings page was open on the TV. -->
-    <string name="stop_home_settings_open_body">A Settings page was open on the TV during the check, so we put the TV\'s own home screen back to be safe. Nothing is wrong with your TV. Try again, and this time press only Home on the remote.</string>
+    <string name="stop_home_settings_open_body">在检查过程中，电视上的设置页面是打开的，所以为了安全起见，我们把电视的主屏幕放回去了。你的电视没有问题。再试一次，这次只按遥控器上的Home。</string>
     <!-- Issues #3221, #3101, #2851: the TV ended the new home screen's install and is low on storage. -->
-    <string name="stop_home_low_storage_body">The TV is almost out of space ({free, plural, other {# MB}} free), so the new home screen couldn\'t be installed. The TV\'s own home screen stays, and everything else we did is kept. Free some space on the TV in Settings &gt; Storage, then run Setup again.</string>
+    <string name="stop_home_low_storage_body">电视几乎没有空间（{free，plural，other{#MB}}free），因此无法安装新的主屏幕。电视的主屏幕保留了下来，我们所做的一切都保留了下来。在“设置”&gt;“存储”中释放电视上的一些空间，然后再次运行“设置”。</string>
     <!-- Issues #3301, #3305: home screen apps the person installed tie with ours, so Android showed its chooser. -->
     <string name="stop_home_chooser_body">{count, plural, one {Another home screen app is installed on the TV ({names}), so Android asked which home screen to use and the switch couldn\'t finish. We put the TV\'s own home screen back. Uninstall that app on the TV, then run Setup again.} other {Other home screen apps are installed on the TV ({names}), so Android asked which home screen to use and the switch couldn\'t finish. We put the TV\'s own home screen back. Uninstall them on the TV, then run Setup again.}}</string>
-    <string name="stop_home_unknown_title">The TV\'s own home screen is back</string>
-    <string name="stop_home_unknown_body">We couldn\'t make the new home screen take over on this TV, so we put the TV\'s own back. Everything else we did is kept. To try again later, open Home screen for this TV, or send us a report so we can look at this model.</string>
+    <string name="stop_home_unknown_title">电视自己的主屏幕又回来了。</string>
+    <string name="stop_home_unknown_body">我们不能让新的主屏幕接管这台电视，所以我们把电视自己放回去。我们所做的一切都被保留了下来。若要稍后重试，请打开此电视的主屏幕，或向我们发送报告，以便我们可以查看此模型。</string>
     <string name="stop_home_unknown_primary">上报软件问题</string>
     <string name="stop_home_unknown_secondary">确定</string>
-    <string name="stop_home_user_said_no_title">The TV\'s own home screen is back</string>
-    <string name="stop_home_user_said_no_body">Put back. Was something wrong, or did you just want to look first?</string>
-    <string name="stop_home_user_said_no_primary">Try again</string>
-    <string name="stop_home_user_said_no_secondary">Something looked wrong</string>
-    <string name="stop_home_timed_out_title">The TV\'s own home screen is back</string>
-    <string name="stop_home_timed_out_body">Putting the TV\'s own home screen back... Done. Your TV is as it was. To try again later, open Home screen for this TV.</string>
-    <string name="stop_home_timed_out_body_off">{count, plural, one {Putting the TV\'s own home screen back... Done. # thing is still switched off, and the home screen is as it was. To try again later, open Home screen for this TV.} other {Putting the TV\'s own home screen back... Done. # things are still switched off, and the home screen is as it was. To try again later, open Home screen for this TV.}}</string>
+    <string name="stop_home_user_said_no_title">电视自己的主屏幕又回来了。</string>
+    <string name="stop_home_user_said_no_body">放回去。是出了什么事，还是你只是想先看看？</string>
+    <string name="stop_home_user_said_no_primary">再试一次</string>
+    <string name="stop_home_user_said_no_secondary">看起来有点不对劲</string>
+    <string name="stop_home_timed_out_title">电视自己的主屏幕又回来了。</string>
+    <string name="stop_home_timed_out_body">把电视自己的主屏幕放回去..完成。你的电视和以前一样。若要稍后重试，请打开此电视的主屏幕。</string>
+    <string name="stop_home_timed_out_body_off">{数，复数，一{把电视自己的主屏幕放回去..完成。#东西仍处于关闭状态，主屏幕与原来一样。若要稍后再试，请打开此电视的主屏幕。}其他{将电视自己的主屏幕放回..完成。#一切仍处于关闭状态，主屏幕保持原样。若要稍后重试，请打开此电视的主屏幕。}}</string>
     <string name="stop_home_timed_out_primary">确定</string>
-    <string name="stop_home_timed_out_secondary">Try again</string>
+    <string name="stop_home_timed_out_secondary">再试一次</string>
 
     <!-- Stop: undone -->
-    <string name="stop_step_failed_title">We stopped</string>
+    <string name="stop_step_failed_title">我们停了下来</string>
     <string name="stop_step_failed_body">{total, plural, other {One step didn\'t work, so we stopped after switching off {done} of #. Nothing else was changed.}}</string>
-    <string name="stop_undone_title">We undid what we did</string>
-    <string name="stop_undone_body">Your TV is as it was. You can run Setup again any time.</string>
+    <string name="stop_undone_title">我们撤销了我们所做的。</string>
+    <string name="stop_undone_body">你的电视和以前一样。您可以随时重新运行安装程序。</string>
     <string name="stop_undone_primary">确定</string>
-    <string name="stop_undone_secondary">Show details</string>
+    <string name="stop_undone_secondary">显示详细信息</string>
 
     <!-- S4d Stopped: connection lost mid-plan (UX 4.14) -->
-    <string name="stop_connection_lost_title">The TV stopped answering</string>
+    <string name="stop_connection_lost_title">电视停止了应答。</string>
     <string name="stop_connection_lost_body">{total, plural, one {The TV stopped answering after we switched off {done} of # thing. Usually it\'s back in a few seconds.} other {The TV stopped answering after we switched off {done} of # things. Usually it\'s back in a few seconds.}}</string>
-    <string name="stop_connection_lost_reconnecting">Reconnecting...</string>
-    <string name="stop_connection_lost_back">Back. Carry on?</string>
-    <string name="stop_connection_lost_primary">Carry on with the rest</string>
-    <string name="stop_connection_lost_secondary">Stop here</string>
-    <string name="stop_connection_lost_tertiary">Undo what we did</string>
-    <string name="stop_connection_lost_suspect">We\'ve turned \"{name}\" back on, it seems to carry Wi-Fi on this TV. Carrying on without it.</string>
-    <string name="stop_connection_lost_gone_body">The TV still isn\'t answering. Check that it\'s on and on the same Wi-Fi as this phone.</string>
-    <string name="stop_connection_lost_keep_trying">Keep trying</string>
+    <string name="stop_connection_lost_reconnecting">正在重新连接..</string>
+    <string name="stop_connection_lost_back">返回。继续？</string>
+    <string name="stop_connection_lost_primary">继续剩下的。</string>
+    <string name="stop_connection_lost_secondary">停在这里</string>
+    <string name="stop_connection_lost_tertiary">撤销我们所做的。</string>
+    <string name="stop_connection_lost_suspect">我们重新打开了“{name}”，它似乎在这台电视上携带了Wi-Fi。没有它也能继续。</string>
+    <string name="stop_connection_lost_gone_body">电视仍然没有回应。检查它是否与此手机处于相同的Wi-Fi上。</string>
+    <string name="stop_connection_lost_keep_trying">不断尝试</string>
 
     <!-- S4e Resume after process death (UX 4.9, 4.14) -->
-    <string name="stop_resume_title">We were in the middle of setting up {tv}</string>
+    <string name="stop_resume_title">我们正在设置 {tv}</string>
     <string name="stop_resume_body">{total, plural, one {{done} of # thing is switched off; the home screen hasn\'t been changed yet. Carry on?} other {{done} of # things are switched off; the home screen hasn\'t been changed yet. Carry on?}}</string>
-    <string name="stop_resume_primary">Carry on</string>
-    <string name="stop_resume_secondary">Undo what we did</string>
-    <string name="stop_resume_tertiary">Leave it as is</string>
-    <string name="stop_resume_home_title">We put the TV\'s own home screen back</string>
-    <string name="stop_resume_home_body">We\'ve put the TV\'s own home screen back to be safe. Try the switch again?</string>
+    <string name="stop_resume_primary">继续</string>
+    <string name="stop_resume_secondary">撤销我们所做的。</string>
+    <string name="stop_resume_tertiary">让它保持原样</string>
+    <string name="stop_resume_home_title">我们把电视自己的主屏幕放回去。</string>
+    <string name="stop_resume_home_body">为了安全起见，我们把电视的主屏幕放回去了。再试一次开关。</string>
     <string name="stop_resume_home_primary">请重试开关</string>
-    <string name="stop_resume_home_secondary">Leave it as is</string>
-    <string name="stop_resume_change_title">We were in the middle of a change on {tv}</string>
-    <string name="stop_resume_change_body">It stopped before it finished. Carry on with the rest, or undo what we did?</string>
-    <string name="stop_reconnect_home_body">Reconnect to the TV to put its own home screen back. We\'ll do it as soon as {tv} answers.</string>
+    <string name="stop_resume_home_secondary">让它保持原样</string>
+    <string name="stop_resume_change_title">我们正在 {tv}上换车。</string>
+    <string name="stop_resume_change_body">还没结束就停了。继续剩下的，还是撤销我们所做的？</string>
+    <string name="stop_reconnect_home_body">重新连接电视，将其主屏幕放回原处。 {tv} 一回答，我们就做。</string>
 
     <!-- Stop: install failure (UX 4.14) -->
-    <string name="stop_install_failed_title">The new home screen couldn\'t be installed</string>
-    <string name="stop_install_failed_body">The TV is out of space: {free, plural, other {# MB}} free, {needed, plural, other {# MB}} needed. We cleared caches and tried again. Still no. The clean-up is done; to try the home screen later, free space in Settings &gt; Storage, then run Setup again.</string>
-    <string name="stop_install_failed_generic_body">The TV wouldn\'t accept the new home screen. The clean-up is done; you can run Setup again later to try the home screen once more.</string>
+    <string name="stop_install_failed_title">无法安装新的主屏幕</string>
+    <string name="stop_install_failed_body">电视空间不足：{免费，复数，其他{#MB}}免费，{需要，复数，其他{#MB}}需要。我们清除了缓存并再次尝试。还是没有。清理工作完成；要稍后尝试主屏幕，请在“设置”&gt;“存储”中释放空间，然后再次运行安装程序。</string>
+    <string name="stop_install_failed_generic_body">电视不接受新的主屏幕。清理工作完成；您可以稍后再次运行安装程序，再次尝试主屏幕。</string>
     <string name="stop_install_failed_primary">确定</string>
-    <string name="stop_install_failed_secondary">Show details</string>
+    <string name="stop_install_failed_secondary">显示详细信息</string>
 
     <!-- Stop: the TV has not come back (UX 4.8) -->
-    <string name="stop_not_back_title">The TV hasn\'t come back</string>
-    <string name="stop_not_back_body">If the TV is stuck on its logo: hold the power button on the TV itself (not the remote) for 10 seconds, then turn it on again. If it shows a screen that says \"Can\'t load Android system\", choose Try again. Don\'t choose factory reset; it isn\'t needed.</string>
-    <string name="stop_not_back_auto">As soon as the TV is back on Wi-Fi we\'ll reconnect and put the TV\'s own home screen back automatically, so you can decide what to do calmly.</string>
-    <string name="stop_not_back_primary">It\'s on again</string>
-    <string name="stop_not_back_secondary">Help me</string>
+    <string name="stop_not_back_title">电视还没回来。</string>
+    <string name="stop_not_back_body">如果电视卡在其徽标上：按住电视本身（不是遥控器）上的电源按钮10秒钟，然后再次打开。如果屏幕上显示“无法加载Android系统”，请选择“重试”。不要选择恢复出厂设置；不需要了。</string>
+    <string name="stop_not_back_auto">一旦电视恢复Wi-Fi，我们将重新连接并自动恢复电视的主屏幕，这样您就可以冷静地决定要做什么。</string>
+    <string name="stop_not_back_primary">又开始了</string>
+    <string name="stop_not_back_secondary">帮我</string>
 
     <!-- S5 Done -->
-    <string name="done_title">Your TV is ready</string>
+    <string name="done_title">你的电视准备好了。</string>
     <!-- 0.4.7 (PM 4): the TV keeps its own home screen, so the check mark is for the clean-up -->
-    <string name="done_title_kept">Clean-up done</string>
-    <string name="done_title_nothing">Nothing was changed</string>
-    <string name="done_body_nothing">There was nothing left to switch off, so your TV is just as it was.</string>
-    <string name="done_body_nothing_kept">Everything we tried to switch off stayed on, so your TV is just as it was.</string>
-    <string name="done_body_nothing_stopped">Setup stopped before anything was changed, so your TV is just as it was.</string>
-    <string name="done_body_nothing_unknown">We weren\'t sure about anything on this TV, so it\'s just as it was. Help add this TV, and a later version can do more.</string>
-    <string name="done_hero_cd">A clean home screen with a glass check mark</string>
+    <string name="done_title_kept">清理完毕</string>
+    <string name="done_title_nothing">什么都没有改变</string>
+    <string name="done_body_nothing">没有什么可以关掉的，所以你的电视就像以前一样。</string>
+    <string name="done_body_nothing_kept">我们试图关掉的所有东西都开着，所以你的电视就像以前一样。</string>
+    <string name="done_body_nothing_stopped">设置在发生任何更改之前停止，因此您的电视保持原样。</string>
+    <string name="done_body_nothing_unknown">我们对这台电视上的任何东西都不确定，所以它就像原来一样。帮助添加此电视，更高版本可以执行更多操作。</string>
+    <string name="done_hero_cd">带有玻璃复选标记的干净主屏幕</string>
     <string name="done_body">{count, plural, =0 {New home screen on. Everything can be put back.} one {# thing switched off. New home screen on. Everything can be put back.} other {# things switched off. New home screen on. Everything can be put back.}}</string>
     <string name="done_body_helper">{count, plural, =0 {The Home button opens the new home screen. The TV\'s own stays on, so casting keeps working. Everything can be put back.} one {# thing switched off. The Home button opens the new home screen. The TV\'s own stays on, so casting keeps working. Everything can be put back.} other {# things switched off. The Home button opens the new home screen. The TV\'s own stays on, so casting keeps working. Everything can be put back.}}</string>
     <string name="done_body_no_home">{count, plural, one {# thing switched off. Everything can be put back.} other {# things switched off. Everything can be put back.}}</string>
@@ -359,93 +359,93 @@
     <string name="done_body_home_kept">{count, plural, =0 {The TV keeps its own home screen, so it will look the same. Everything can be put back.} one {# thing switched off. The TV keeps its own home screen, so it will look the same. Everything can be put back.} other {# things switched off. The TV keeps its own home screen, so it will look the same. Everything can be put back.}}</string>
     <string name="done_body_partial">{total, plural, other {{done} of # switched off; the home screen is unchanged. Everything can be put back.}}</string>
     <string name="done_body_partial_home_on">{total, plural, other {{done} of # switched off. New home screen on. Everything can be put back.}}</string>
-    <string name="done_home_kept_timed_out">The TV\'s own home screen is back: the check on the TV ran out of time. To try again later, open Home screen for this TV.</string>
-    <string name="done_home_kept_said_no">The TV\'s own home screen is back: you said the new one didn\'t look right. To try again later, open Home screen for this TV.</string>
-    <string name="done_home_kept">The TV\'s own home screen is back: the new one didn\'t take over. To try again later, open Home screen for this TV.</string>
+    <string name="done_home_kept_timed_out">电视自己的主屏幕又回来了：检查电视的时间用完了。若要稍后重试，请打开此电视的主屏幕。</string>
+    <string name="done_home_kept_said_no">电视自己的主屏幕又回来了：你说新的看起来不太对。若要稍后重试，请打开此电视的主屏幕。</string>
+    <string name="done_home_kept">电视自己的主屏幕回来了：新的没有接管。若要稍后重试，请打开此电视的主屏幕。</string>
     <!-- 0.4.7 (UX finding 18, issues #1279, #1649): the look's send (a sync push or the launcher's ThemeProvider) did not reach the TV while the switch held -->
-    <string name="done_look_failed">Your look didn\'t reach the TV. Send it again from Home screen.</string>
-    <string name="done_restore_saved">Restore point saved on this phone ({date})</string>
+    <string name="done_look_failed">你的目光没有照到电视上。从主屏幕再次发送。</string>
+    <string name="done_restore_saved">此电话上保存的还原点（{date}）</string>
     <!-- beta3: a later run; the restore point is the one from the first Setup, which Undo everything goes back to -->
-    <string name="done_restore_earlier">Restore point on this phone (from {date})</string>
-    <string name="done_debug_note">Debugging on the TV switches off when you tap Finish. Next time, switch it on again with the remote.</string>
-    <string name="done_debug_kept">Debugging on the TV stays on, as you chose</string>
-    <string name="done_skipped">{name} wouldn\'t switch off; it\'s harmless.</string>
+    <string name="done_restore_earlier">此电话上的还原点（从 {date}开始）</string>
+    <string name="done_debug_note">点击“完成”后，电视上的调试功能将关闭。下一次，用遥控器再次打开它。</string>
+    <string name="done_debug_kept">根据您的选择，电视上的调试将保持打开状态</string>
+    <string name="done_skipped">{name} 不会关闭；它是无害的。</string>
     <!-- RF-LAUNCHER-250 F1 (owner copy): a switch-off the TV refused because the app runs the TV's inputs, on Done and in Manage -->
-    <string name="kept_tv_input">{name}. Kept: it runs the TV\'s HDMI and tuner inputs.</string>
+    <string name="kept_tv_input">{name}。保持：它运行电视的HDMI和调谐器输入。</string>
     <string name="done_skipped_many">{count, plural, one {# thing wouldn\'t switch off; it\'s harmless.} other {# things wouldn\'t switch off; they\'re harmless.}}</string>
-    <string name="done_mibox_usb">Your USB port is powered again.</string>
-    <string name="done_add_card_title">Add a card to the home screen</string>
+    <string name="done_mibox_usb">您的USB端口已重新通电。</string>
+    <string name="done_add_card_title">将卡片添加到主屏幕</string>
     <!-- Optional, never a step of Setup: the new home screen starts with module cards off (RFC-CARDS-1) -->
-    <string name="done_add_card_body">Optional. You can add cards later under Cards and modules.</string>
-    <string name="done_note_title">Save a restore note for the family</string>
-    <string name="done_finish">Finish</string>
-    <string name="done_finishing">Switching debugging off...</string>
-    <string name="done_finished">Switching debugging off... done.</string>
+    <string name="done_add_card_body">可选。您可以稍后在“卡和模块”下添加卡。</string>
+    <string name="done_note_title">保存族的恢复注释</string>
+    <string name="done_finish">完成</string>
+    <string name="done_finishing">正在关闭调试..</string>
+    <string name="done_finished">正在关闭调试..完成了。</string>
 
     <!-- S5 restart card and flow (D24, UX 4.8) -->
-    <string name="restart_card_title">Restart the TV to check it all sticks</string>
-    <string name="restart_card_recommended">2 minutes, recommended</string>
-    <string name="restart_card_optional">Optional</string>
-    <string name="restart_button">Restart</string>
-    <string name="restart_getting_ready">{seconds, plural, other {Getting ready... # s}}</string>
-    <string name="restart_intro">Restarting the TV. It usually takes about a minute. We\'re watching for it.</string>
-    <string name="restart_progress_off">TV off...</string>
-    <string name="restart_progress_starting">Starting...</string>
-    <string name="restart_progress_found">Found it at {time}...</string>
-    <string name="restart_progress_home">Home screen is the new one.</string>
+    <string name="restart_card_title">重新启动电视以检查是否全部卡住</string>
+    <string name="restart_card_recommended">2分钟，推荐</string>
+    <string name="restart_card_optional">可选</string>
+    <string name="restart_button">重新启动</string>
+    <string name="restart_getting_ready">{秒，复数，其他{准备..#s}}</string>
+    <string name="restart_intro">重新启动电视。通常需要一分钟左右。我们正在观察它。</string>
+    <string name="restart_progress_off">电视关闭..</string>
+    <string name="restart_progress_starting">正在启动..</string>
+    <string name="restart_progress_found">在 {time}找到的..</string>
+    <string name="restart_progress_home">主屏幕是新的。</string>
     <!-- 0.4.7 (UX finding 7): the TV keeps its own home screen, by Setup's decision or after a failed switch -->
-    <string name="restart_progress_home_helper">The Home button opens the new home screen.</string>
-    <string name="restart_progress_home_own">Home screen is the TV\'s own, as before.</string>
-    <string name="restart_progress_good">All good.</string>
+    <string name="restart_progress_home_helper">主屏幕按钮打开新的主屏幕。</string>
+    <string name="restart_progress_home_own">和以前一样，主屏幕是电视自己的。</string>
+    <string name="restart_progress_good">一切都好。</string>
     <!-- 0.4.8: what the app counted across the restart (Restarts), and the one tap that tells us (the confirmation) -->
-    <string name="restart_progress_held">The new home screen held through the restart.</string>
-    <string name="restart_progress_failed">The TV\'s own home screen came back after the restart.</string>
-    <string name="done_tell_us">Tell us it worked</string>
-    <string name="done_tell_us_note">It counts for this TV model. You see what goes first, and nothing is sent until you post it on GitHub.</string>
-    <string name="done_restart_report_note">Tell us, so we can look at this TV model. The report says what the app counted.</string>
+    <string name="restart_progress_held">新的主屏幕在重启过程中保持不变。</string>
+    <string name="restart_progress_failed">重新启动后，电视自己的主屏幕又回来了。</string>
+    <string name="done_tell_us">告诉我们成功了。</string>
+    <string name="done_tell_us_note">它对这个电视模型很重要。你先看看发生了什么，在你把它发布到GitHub上之前，什么都不会发送。</string>
+    <string name="done_restart_report_note">告诉我们，这样我们就可以看看这个电视模型。报告显示了应用程序的计算结果。</string>
     <!-- 0.4.8: "This is your TV now", the TV's screenshot after Setup sent the look -->
     <string name="done_tv_now_title">现在这是你的电视</string>
     <string name="done_tv_now_cd">现在的电视节目</string>
     <string name="done_tv_now_again">不对吗？请重新发送</string>
-    <string name="restart_came_back">{count, plural, one {# thing came back on after the restart; switched off again.} other {# things came back on after the restart; switched off again.}}</string>
-    <string name="restart_slow">Taking longer than usual. Some TVs are slow to rejoin Wi-Fi. If the TV shows its logo and nothing else, wait another two minutes.</string>
+    <string name="restart_came_back">{count，复数，一个{#在重新启动后，东西又回来了；再次关闭。}其他{#事物在重新启动后重新打开；再次关闭。}}</string>
+    <string name="restart_slow">比平时花的时间更长。有些电视重新连接Wi-Fi的速度很慢。如果电视只显示其徽标，而没有显示其他内容，请再等两分钟。</string>
 
 
     <!-- Stop and undo ask first (Confirmations): a question, one calm sentence, the verb and a way back -->
-    <string name="confirm_stop_title">Stop now?</string>
-    <string name="confirm_stop_body">We stop here and put back what we changed so far. Your TV stays safe.</string>
-    <string name="confirm_stop_button">Stop and undo</string>
-    <string name="confirm_keep_going">Keep going</string>
-    <string name="confirm_stop_here_title">Stop here?</string>
-    <string name="confirm_stop_here_body">We keep what is already done and change nothing else. Your TV stays safe.</string>
-    <string name="confirm_stop_here_button">Stop here</string>
-    <string name="confirm_undo_title">Undo the changes on the TV?</string>
-    <string name="confirm_undo_body">We put back everything this change did, so the TV is as it was before. Nothing is deleted.</string>
-    <string name="confirm_undo_button">Undo the changes</string>
+    <string name="confirm_stop_title">现在停下来？</string>
+    <string name="confirm_stop_body">我们在这里停下来，把我们到目前为止改变的东西放回去。你的电视很安全。</string>
+    <string name="confirm_stop_button">停止并撤消</string>
+    <string name="confirm_keep_going">继续走</string>
+    <string name="confirm_stop_here_title">停在这里？</string>
+    <string name="confirm_stop_here_body">我们保留已经完成的工作，不改变任何其他内容。你的电视很安全。</string>
+    <string name="confirm_stop_here_button">停在这里</string>
+    <string name="confirm_undo_title">撤消电视上的更改？</string>
+    <string name="confirm_undo_body">我们把这个变化所做的一切都放回去了，所以电视还是和以前一样。未删除任何内容。</string>
+    <string name="confirm_undo_button">撤消更改</string>
     <!-- Test build: the card before the plan when this TV's list is a candidate (made from reports, not tested yet). -->
-    <string name="candidate_overline">Test build</string>
-    <string name="candidate_title">This TV\'s list is new</string>
-    <string name="candidate_body">We made a list for this TV from reports of the same model, but nobody has tested it yet. What it switches off is listed in the plan as usual, and you can put everything back from Restore point.</string>
-    <string name="candidate_ask_issue">If you try it, please tell us in issue {issue} how it went after a few days:</string>
-    <string name="candidate_ask">If you try it, please tell us with Report a problem how it went after a few days:</string>
-    <string name="candidate_check_wifi">Wi-Fi after a restart</string>
-    <string name="candidate_check_remote">Every button on the remote, Input and voice too</string>
-    <string name="candidate_check_hdmi">Each HDMI input</string>
-    <string name="candidate_check_live_tv">Live TV</string>
-    <string name="candidate_check_casting">Casting from a phone</string>
-    <string name="candidate_try">Try the test list</string>
-    <string name="candidate_careful">Stay careful, as in 0.3.4</string>
-    <string name="candidate_careful_note">Careful means only what we\'re sure about for TVs of this brand, the same as version 0.3.4.</string>
+    <string name="candidate_overline">测试构建</string>
+    <string name="candidate_title">此电视的列表是新的</string>
+    <string name="candidate_body">我们根据同一型号的报告列出了这款电视的清单，但还没有人对它进行过测试。它关闭的内容像往常一样列在计划中，您可以将所有内容从还原点放回。</string>
+    <string name="candidate_ask_issue">如果你尝试过，请在 {issue} 中告诉我们几天后的情况:</string>
+    <string name="candidate_ask">如果你尝试了，请告诉我们，并报告一个问题，几天后它是如何运行的:</string>
+    <string name="candidate_check_wifi">重新启动后的Wi-Fi</string>
+    <string name="candidate_check_remote">遥控器上的每个按钮，输入和语音</string>
+    <string name="candidate_check_hdmi">每个HDMI输入</string>
+    <string name="candidate_check_live_tv">电视直播</string>
+    <string name="candidate_check_casting">从电话中选角</string>
+    <string name="candidate_try">尝试测试列表</string>
+    <string name="candidate_careful">保持谨慎，如0.3.4所示</string>
+    <string name="candidate_careful_note">小心的意思是我们对这个品牌的电视有把握，与0.3.4版本相同。</string>
     <!-- RFC-HELPER-1 (test build): the Customise switch "Home button helper" and its consent (PLAN 4.2). -->
-    <string name="helper_group">Home button</string>
+    <string name="helper_group">主页按钮</string>
     <string name="helper_row">主页按钮助手</string>
-    <string name="helper_row_note">The TV\'s own home screen stays on; the Home button opens the new one</string>
-    <string name="helper_row_on">On: the Home button opens the new home screen, and the TV\'s own stays on</string>
+    <string name="helper_row_note">电视自己的主屏幕保持打开状态；主页按钮打开新的。</string>
+    <string name="helper_row_on">打开：Home键打开新的主屏幕，电视本身保持打开状态</string>
     <string name="helper_consent_title">主页按钮助手</string>
-    <string name="helper_consent_keep">The TV\'s own home screen stays on; the Home button opens the new one. Its setup wizard stays on too, so casting and your Wi-Fi are not touched. A small helper inside the new home screen watches for the TV\'s home screen and opens the new one instead.</string>
-    <string name="helper_consent_sees">The helper is an Android accessibility service. Android will say it can see your screen and the buttons you press. This one asks Android only for which app is open, not for what is on screen, and not for your button presses. It has no internet access. It is part of the open-source home screen by Gathin (github.com/Gathin23/cleanyourtv), the same app this app installs.</string>
-    <string name="helper_consent_changes">What changes: you may see the TV\'s own home screen for a moment before the new one. If the TV or a cleaner app force-stops the home screen, the helper goes off until you switch it on again here.</string>
-    <string name="helper_consent_off">You can switch it off any time: here, with Undo, or on the TV in Settings &gt; Accessibility &gt; Home button.</string>
-    <string name="helper_consent_yes">Switch on the helper</string>
-    <string name="helper_consent_no">Not now</string>
+    <string name="helper_consent_keep">电视自己的主屏幕保持打开状态；主页按钮打开新的。它的设置向导也保持打开，所以铸造和你的Wi-Fi不会受到影响。新主屏幕中的一个小助手观看电视的主屏幕，并打开新的主屏幕。</string>
+    <string name="helper_consent_sees">助手是一个Android辅助功能服务。安卓会说它可以看到你的屏幕和你按下的按钮。这个程序只询问Android打开了哪个应用程序，而不是屏幕上的内容，也不是你按下的按钮。它不能上网。它是Gathin（github.com/gathin23/cleanyourtv）的开源主屏幕的一部分，与该应用程序安装的应用程序相同。</string>
+    <string name="helper_consent_changes">变化：您可能会在新电视之前看到电视自己的主屏幕。如果电视或清洁应用程序强制停止主屏幕，则助手将关闭，直到您在此处再次打开它。</string>
+    <string name="helper_consent_off">您可以随时关闭它：在这里，使用“撤消”，或在电视上的“设置”&gt;“辅助功能”&gt;“主页”按钮。</string>
+    <string name="helper_consent_yes">打开辅助对象</string>
+    <string name="helper_consent_no">不是现在</string>
 </resources>

@@ -15,24 +15,24 @@
 
     <!-- Credential prompt (D17), raised by "Put everything back" -->
     <string name="gate_title">确认您的身份</string>
-    <string name="gate_subtitle">在{tv}上更改任何内容之前</string>
+    <string name="gate_subtitle">在 {tv}上更改任何内容之前</string>
     <string name="gate_negative">取消</string>
     <string name="gate_failed">我们无法确认您的身份，因此没有任何更改。</string>
 
     <!-- M6 Restore point -->
     <string name="restore_title">还原点</string>
-    <string name="restore_current">保存于{date}</string>
+    <string name="restore_current">保存于 {date}</string>
     <string name="restore_none">还没有还原点。在第一次更改之前保存一个。</string>
     <string name="restore_read_failed">读取还原点时出错</string>
     <string name="restore_row_undo">撤消所有操作</string>
-    <string name="restore_row_undo_sub">将电视恢复到{date}时的状态</string>
+    <string name="restore_row_undo_sub">将电视恢复到 {date}时的状态</string>
     <string name="restore_row_save">保存副本</string>
     <string name="restore_row_save_sub">将zip文件保存到您选择的位置。</string>
     <string name="restore_row_factory">出厂重置前</string>
     <string name="restore_row_factory_sub">重新打开设置向导，以便重置后电视可以正常启动。</string>
 
     <!-- Undo everything: preview (UX 4.13) -->
-    <string name="restore_preview_title">这让电视回到了{date}的状态：</string>
+    <string name="restore_preview_title">这让电视回到了 {date}的状态：</string>
     <string name="restore_preview_things">{count, plural, one {重新启用#项内容} other {重新启用#项内容}}</string>
     <string name="restore_preview_home">电视自己的主屏幕（ {name} ）重新掌管</string>
     <string name="restore_preview_wizard">重新打开安装向导</string>
@@ -53,11 +53,11 @@
 
     <!-- Undo everything: narration and end -->
     <string name="restore_working_title">把所有东西都放回去</string>
-    <string name="restore_working_things">{total, plural, other {正在重新启动： {done}/#...}}</string>
+    <string name="restore_working_things">{total, plural, other {正在重新启动： {done} /#...}}</string>
     <string name="restore_working_home">正在将电视机自己的主屏幕放回……</string>
     <string name="restore_working_wizard">正在重新打开设置向导...</string>
     <string name="restore_done_title">一切都回来了</string>
-    <string name="restore_done_body">您的电视与{date}一样。还原点会保留，以防您改变主意。</string>
+    <string name="restore_done_body">您的电视与 {date}一样。还原点会保留，以防您改变主意。</string>
     <string name="restore_clean_again">再次安装</string>
 
     <!-- Before a factory reset -->
