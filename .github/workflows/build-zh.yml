@@ -36,19 +36,22 @@ jobs:
           java-version: "21"
 
       - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
+        run: |
+          # GitHub ubuntu 运行机已预装 Android SDK（含 cmdline-tools/latest），
+          # 弃用易与运行机镜像冲突的第三方 action（android-actions/setup-android@v3）。
+          export ANDROID_HOME="${ANDROID_HOME:-/usr/local/lib/android/sdk}"
+          echo "ANDROID_HOME=$ANDROID_HOME" >> "$GITHUB_ENV"
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --version
 
       - name: Install SDK packages
         run: |
-          yes | sdkmanager --licenses || true
-          sdkmanager "platforms;android-37" "build-tools;35.0.0" "platform-tools"
+          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses || true
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platforms;android-37" "build-tools;35.0.0" "platform-tools"
 
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
       - name: Build full release APK (中文资源随构建自动包含)
-        env:
-          ANDROID_HOME: ${{ env.ANDROID_HOME }}
         run: ./gradlew :app:assembleFullRelease --no-daemon
 
       - name: Upload unsigned APK
