@@ -45,8 +45,10 @@ jobs:
 
       - name: Install SDK packages
         run: |
-          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses || true
-          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platforms;android-37" "build-tools;35.0.0" "platform-tools"
+          # 运行机已预装 platforms;android-37（项目 compileSdk=37，无法也不需从仓库单独下载该平台）；
+          # 仅静默接受许可证，并补充 build-tools;35.0.0 与 platform-tools（运行机若无则安装，幂等）。
+          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses >/dev/null || true
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "build-tools;35.0.0" "platform-tools"
 
       - name: Make gradlew executable
         run: chmod +x ./gradlew
